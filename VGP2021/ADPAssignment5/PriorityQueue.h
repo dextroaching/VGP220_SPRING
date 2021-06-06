@@ -32,6 +32,8 @@ public:
 		delete[] mDataArray;
 	}
 
+	//ERROR -5. You forgot that you have data with a priority. Don't blindly copy and paste from the things that we did.
+	//This is a whole new struct... 
 	void Enqueue(Data data)
 	{
 		//TODO_3: Implement an Enqueue method for this priority queue.
@@ -49,7 +51,7 @@ public:
 			int i = mSize;
 			++mSize;
 
-			while (i != 0 && &mDataArray[GetParent(i)] < &mDataArray[i])
+			while (i != 0 && mDataArray[GetParent(i)]/*.priority*/ < mDataArray[i]/*.priority*/)
 			{
 				swap(&mDataArray[i], &mDataArray[GetParent(i)]);
 				i = GetParent(i);
@@ -59,6 +61,7 @@ public:
 		}
 		std::cout << "No Space\n";
 	}
+
 
 	Data Dequeue()
 	{
@@ -115,6 +118,8 @@ private:
 		*b = temp;
 	}
 
+	//ERROR -10. You forgot that you have data with a priority. Don't blindly copy and paste from the things that we did.
+	//This is a whole new struct... 
 	void Heapfy(int index)
 	{
 		//TODO_5: Implement Heapfy
@@ -127,11 +132,11 @@ private:
 		int leftIdx = GetLeft(index);
 		int rightIdx = GetRight(index);
 
-		if (leftIdx != 0 && &mDataArray[leftIdx] > &mDataArray[largest])
+		if (leftIdx != 0 && mDataArray[leftIdx]/*.priority*/ > mDataArray[largest]/*.priority*/)
 		{
 			largest = leftIdx;
 		}
-		if (rightIdx != 0 && &mDataArray[rightIdx] > &mDataArray[largest])
+		if (rightIdx != 0 && mDataArray[rightIdx]/*.priority*/ > mDataArray[largest]/*.priority*/)
 		{
 			largest = rightIdx;
 		}

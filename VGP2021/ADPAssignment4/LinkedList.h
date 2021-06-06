@@ -145,6 +145,18 @@ public:
 
 	}
 
+	//ERROR: -5. A display function, should not modify the current data. a good way to approach this problem is with a recursive function:
+	/*void printReverse(Node* node)
+	{
+		if (node->next != nullptr)
+		{
+			printReverse(node->next);
+		}
+
+		std::cout << node->data << " ";
+	}*/
+	//then, inside your DisplayReverseList, you call printReverse(mHead).
+
 	//Displays all the elements of the linked list in reverse order
 	void DisplayReverseList()
 	{

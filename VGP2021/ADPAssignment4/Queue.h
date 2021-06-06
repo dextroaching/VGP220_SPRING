@@ -26,10 +26,13 @@ public:
 		mCurrentSize = 0;
 	}
 	
+
+	//ERROR -5. Dangling pointers.
 	~Queue()
 	{
 		delete[] arr;
 	}
+
 	//Inserts the data in the queue.
 	void Enqueue(T data)
 	{
@@ -45,6 +48,8 @@ public:
 		}
 	}
 
+	//ERROR: -5. Dequeue is a method that removes elements from a queue, and you are increasing the capacity?
+	
 	//Removes an element from the queue and returns this element in the output parameter
 	//Also it returns true if the object was removed and false if the Queue is empty
 	bool Daqueue(T& output)
@@ -100,8 +105,6 @@ public:
 			}
 			std::cout << "Rear index: " << rear;
 		}
-
-		
 	}
 
 };
