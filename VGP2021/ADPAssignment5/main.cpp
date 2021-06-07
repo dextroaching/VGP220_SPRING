@@ -2,6 +2,8 @@
 #include <string>
 #include "PriorityQueue.h"
 
+//Grade: 85/100
+
 //This test will use a priority queue to sort the students by it's grades(priority).
 //Students names will be the data.
 //Students with greater grade should leave the queue first.
@@ -34,7 +36,7 @@ int main(int argc, char* argv[])
 	std::cout << "Top 5 students and grades:\n";
 	for (int i = 0; i < 5; ++i)
 	{
-		std::cout << i + 1 << ") " << first5->data << " " << first5->priority << "\n";
+		std::cout << i + 1 << ") " << first5[i].data << " " << first5[i].priority << "\n";
 	}
 	//EXPECTED:
 	//Top 5 students and grades:
