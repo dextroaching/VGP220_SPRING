@@ -78,7 +78,7 @@ public:
 				return mDataArray[0];
 			}
 			Data root = mDataArray[0];
-			mDataArray[0] = mDataArray[mSize];
+			mDataArray[0] = mDataArray[mSize-1];
 			Heapfy(0);
 			return root;
 		}
